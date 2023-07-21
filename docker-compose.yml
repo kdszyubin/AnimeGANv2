@@ -1,0 +1,13 @@
+version: '3'
+services:
+  animeganv2:
+    container_name: animeganv2
+    image: animeganv2:1.0
+    volumes:
+      - /data/dataset/input/animeganv2:/data/dataset/input/animeganv2
+      - /data/dataset/output/animeganv2:/data/dataset/output/animeganv2
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    environment: 
+      - CHECKPOINT_DIR=checkpoint/generator_Paprika_weight
